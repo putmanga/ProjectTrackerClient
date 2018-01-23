@@ -12,7 +12,6 @@ public class LogoutCommand extends Command {
 
     public LogoutCommand(Client client, BufferedReader reader) {
         super(client, reader);
-        isExit = true;
     }
 
     @Override
@@ -24,6 +23,7 @@ public class LogoutCommand extends Command {
     @SneakyThrows
     @Override
     public void execute() {
+        isExit = true;
         try {
             client.logout();
         } catch (HttpClientErrorException e) {
